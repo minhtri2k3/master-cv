@@ -8,7 +8,7 @@ const highlights = [
   ['Cumulative GPA', '2.78 / 4.00'],
   ['Recent 2-year GPA', '≈ 3.20 / 4.00'],
   ['IELTS', 'L 7.5 · R 6.5 · W 6.5 · S 6.0'],
-  ['Primary focus', 'AI · Computer Science'],
+  ['Primary focus', 'AI · Computer Science · Security'],
 ];
 
 const experience = [
@@ -143,7 +143,7 @@ function App() {
             </div>
             <div>
               <h3>Master's direction</h3>
-              <p><strong>Primary:</strong> AI · Computer Science<br /><strong>Additional:</strong> Software Engineering · Cybersecurity<br />Target intake: 2027</p>
+              <p><strong>Primary:</strong> AI · Computer Science · Security<br /><strong>Additional:</strong> Software Engineering · Cybersecurity<br />Target intake: 2027</p>
             </div>
           </div>
         </section>
