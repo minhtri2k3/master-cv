@@ -150,7 +150,7 @@ function App() {
         <section className="closing reveal" data-reveal>
           <div className="section-label">Mentor context</div>
           <h2>What I am looking for</h2>
-          <p>I am looking for guidance on programme fit, scholarship strategy, and how to position professional experience, recent academic improvement, and AI research effectively for postgraduate applications in 2027.</p>
+          <p>I am looking for Master's and potential PhD pathways that align with my background and offer a realistic route to continue working and living in the country after graduation. I would value guidance on programme fit, scholarship strategy, long-term career prospects, and how to position my professional experience, recent academic improvement, and AI research effectively.</p>
         </section>
       </article>
     </main>
