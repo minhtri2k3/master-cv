@@ -7,7 +7,7 @@ const highlights = [
   ['Graduation', 'November 2026'],
   ['Cumulative GPA', '2.78 / 4.00'],
   ['Recent 2-year GPA', '≈ 3.20 / 4.00'],
-  ['IELTS', 'L 7.5 · R 6.5 · W 6.5 · S 6.0'],
+  ['IELTS', 'Overall 6.5 · L 7.5 · R 6.5 · W 6.5 · S 6.0'],
   ['Primary focus', 'AI · Computer Science · Security'],
 ];
 
@@ -19,10 +19,9 @@ const experience = [
 ];
 
 const strengths = [
-  ['Production ownership', 'Feature delivery, release cycles, maintenance, performance optimization, and technical decision-making.'],
-  ['Mobile and AI breadth', 'Commercial Flutter experience combined with backend development, LLM systems, Agentic RAG, retrieval, and deployment.'],
-  ['International collaboration', 'Worked with a Barcelona-based team and communicated directly with product, design, and senior stakeholders.'],
-  ['Research with measurable evidence', 'Bachelor thesis evaluated using production telemetry, cost metrics, engagement data, and user feedback.'],
+  ['Production ownership', 'Trusted to own production applications and contribute to product-level and technical decisions beyond implementation tasks.'],
+  ['Team leadership', 'Led and coordinated team members, assigned work, aligned priorities, and helped move the team toward delivery decisions.'],
+  ['Decision-making', 'Worked directly with product, design, and senior stakeholders to evaluate trade-offs and make practical delivery decisions.'],
 ];
 
 function App() {
@@ -81,7 +80,7 @@ function App() {
 
         <section className="section reveal" data-reveal>
           <div className="section-label">Profile strengths</div>
-          <h2>What defines my profile</h2>
+          <h2>Leadership and ownership</h2>
           <div className="text-list">
             {strengths.map(([title, text]) => <div className="text-row" key={title}>
               <h3>{title}</h3>
@@ -139,7 +138,7 @@ function App() {
             </div>
             <div>
               <h3>English</h3>
-              <p>IELTS<br />Listening 7.5 · Reading 6.5<br />Writing 6.5 · Speaking 6.0</p>
+              <p>IELTS Overall <strong>6.5</strong><br />Listening 7.5 · Reading 6.5<br />Writing 6.5 · Speaking 6.0</p>
             </div>
             <div>
               <h3>Master's direction</h3>
