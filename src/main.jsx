@@ -2,41 +2,32 @@ import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
-const snapshot = [
-  { label: 'University', value: 'International University — VNU-HCM', note: 'Information Technology · Computer Network' },
-  { label: 'Graduation', value: 'November 2026', note: 'Bachelor degree · Intake target 2027' },
-  { label: '4-year GPA', value: '2.78 / 4.00', note: '69.3 / 100 · Official cumulative' },
-  { label: 'Recent 2-year GPA', value: '≈ 3.20 / 4.00', note: '≈77.31 / 100 · 67 credits · reference weighted average' },
-  { label: 'IELTS', value: '6.5 profile', note: 'L 7.5 · R 6.5 · W 6.5 · S 6.0' },
-  { label: 'Primary', value: 'AI · Computer Science', note: 'Also exploring Software Engineering & Cybersecurity' },
-];
-
-const strengths = [
-  ['Production ownership', 'Worked beyond ticket-level implementation: feature delivery, release cycles, maintenance, and technical decisions.'],
-  ['Mobile + AI breadth', 'Commercial Flutter/mobile experience combined with backend, LLM, Agentic RAG, retrieval, and deployment work.'],
-  ['International teamwork', 'Worked with a Barcelona-based team and communicated directly with product, design, and senior stakeholders.'],
-  ['Research with evidence', 'Bachelor thesis evaluated on production telemetry, with measurable cost, retrieval, and user-engagement results.'],
+const highlights = [
+  ['University', 'International University — VNU-HCM'],
+  ['Graduation', 'November 2026'],
+  ['Cumulative GPA', '2.78 / 4.00'],
+  ['Recent 2-year GPA', '≈ 3.20 / 4.00'],
+  ['IELTS', 'L 7.5 · R 6.5 · W 6.5 · S 6.0'],
+  ['Primary focus', 'AI · Computer Science'],
 ];
 
 const experience = [
-  ['Vincent Holding', 'Middle Mobile Developer', 'Jun 2026 — Present', 'Owns two commercial apps, release pipelines, performance work, and LLM-enabled mobile features.'],
-  ['Carrots · Barcelona', 'Junior Mobile Developer · Product Owner', 'Sep 2025 — Jun 2026', 'Owned a live iOS/Android app with 2,000+ active users and improved image-heavy performance.'],
-  ['Document Easy', 'Fresher Mobile Developer', 'Jul 2025 — Sep 2025', 'Maintained and enhanced a large-scale product serving 100,000+ users in Vietnam.'],
-  ['SMARTOSC', 'Mobile Developer Intern', 'Apr 2025 — Jul 2025', 'Built a Flutter + Python + AI recommendation prototype and led the internship presentation team.'],
+  ['Vincent Holding', 'Middle Mobile Developer', 'Jun 2026 — Present', 'Owns two commercial applications, release pipelines, performance work, and LLM-enabled mobile features.'],
+  ['Carrots · Barcelona', 'Junior Mobile Developer · Product Owner', 'Sep 2025 — Jun 2026', 'Owned a live iOS/Android application with 2,000+ active users and improved performance for image-heavy workflows.'],
+  ['Document Easy', 'Fresher Mobile Developer', 'Jul 2025 — Sep 2025', 'Maintained and enhanced a production application serving more than 100,000 users in Vietnam.'],
+  ['SMARTOSC', 'Mobile Developer Intern', 'Apr 2025 — Jul 2025', 'Built an end-to-end Flutter, Python, and AI recommendation prototype and coordinated the internship presentation team.'],
 ];
 
-const thesisStats = [
-  ['5,096', 'products'],
-  ['209', 'evaluated turns'],
-  ['1–2', 'LLM calls / turn'],
-  ['$0.000142', 'avg. cost / turn'],
+const strengths = [
+  ['Production ownership', 'Feature delivery, release cycles, maintenance, performance optimization, and technical decision-making.'],
+  ['Mobile and AI breadth', 'Commercial Flutter experience combined with backend development, LLM systems, Agentic RAG, retrieval, and deployment.'],
+  ['International collaboration', 'Worked with a Barcelona-based team and communicated directly with product, design, and senior stakeholders.'],
+  ['Research with measurable evidence', 'Bachelor thesis evaluated using production telemetry, cost metrics, engagement data, and user feedback.'],
 ];
-
-function Arrow() { return <span aria-hidden="true">↗</span>; }
 
 function App() {
   useEffect(() => {
-    const nodes = document.querySelectorAll('[data-reveal]');
+    const items = document.querySelectorAll('[data-reveal]');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -45,146 +36,129 @@ function App() {
         }
       });
     }, { threshold: 0.08 });
-    nodes.forEach((node) => observer.observe(node));
+    items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
   }, []);
 
   return <>
-    <header className="site-header">
-      <a className="identity" href="#top">
-        <strong>Minh Tri Nguyen</strong>
-        <span>Master Portfolio · 2027</span>
-      </a>
-      <nav>
-        <a href="#overview">Overview</a>
-        <a href="#experience">Experience</a>
-        <a href="#research">Research</a>
-        <a href="#education">Education</a>
-      </nav>
-      <a className="header-cta" href="mailto:quangminhtri2003@gmail.com">Contact <Arrow /></a>
+    <header className="header">
+      <div className="header-inner">
+        <a className="name" href="#top">Nguyễn Quang Minh Trí</a>
+        <nav>
+          <a href="#profile">Profile</a>
+          <a href="#experience">Experience</a>
+          <a href="#research">Research</a>
+          <a href="#education">Education</a>
+        </nav>
+        <a className="contact" href="mailto:quangminhtri2003@gmail.com">Contact</a>
+      </div>
     </header>
 
-    <main id="top">
-      <section className="hero wrap">
-        <div className="hero-copy reveal" data-reveal>
-          <p className="meta-line">23 years old · Vietnam · Postgraduate applicant for 2027</p>
+    <main id="top" className="page">
+      <article className="blog">
+        <section className="intro-block reveal" data-reveal>
+          <p className="kicker">Master's Applicant · Intake 2027 · Vietnam</p>
           <h1>Software engineer with production experience and a growing research focus in AI.</h1>
-          <p className="intro">I am <b>Nguyễn Quang Minh Trí</b>, an Information Technology student at <b>International University — VNU-HCM</b>, graduating in <b>November 2026</b>. My profile combines commercial mobile engineering, international product ownership, and an Agentic RAG bachelor thesis.</p>
-          <div className="hero-links">
-            <a href="mailto:quangminhtri2003@gmail.com">Email <Arrow /></a>
-            <a href="https://www.linkedin.com/in/quang-minh-tri-nguyen-a4a942275/" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a>
-            <a href="https://github.com/minhtri2k3" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+          <p className="lead">I am <strong>Nguyễn Quang Minh Trí</strong>, an Information Technology student at International University — VNU-HCM, graduating in November 2026. My profile combines commercial mobile engineering, international product ownership, and an Agentic RAG bachelor thesis.</p>
+          <div className="links">
+            <a href="mailto:quangminhtri2003@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/quang-minh-tri-nguyen-a4a942275/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/minhtri2k3" target="_blank" rel="noreferrer">GitHub</a>
           </div>
-        </div>
+        </section>
 
-        <aside className="primary-card reveal" data-reveal>
-          <span className="tiny-label">Primary direction</span>
-          <strong>AI · Computer Science</strong>
-          <p>Master’s intake 2027, with additional interest in Software Engineering and Cybersecurity.</p>
-        </aside>
-      </section>
-
-      <section id="overview" className="overview wrap">
-        <div className="section-title reveal" data-reveal>
-          <span>01 · At a glance</span>
-          <h2>The information a mentor should see first.</h2>
-        </div>
-
-        <div className="snapshot-grid">
-          {snapshot.map((item) => <article className="snapshot-card reveal" data-reveal key={item.label}>
-            <span>{item.label}</span>
-            <strong>{item.value}</strong>
-            <p>{item.note}</p>
-          </article>)}
-        </div>
-
-        <div className="quick-answer reveal" data-reveal>
-          <span className="tiny-label">In one sentence</span>
-          <p><b>Yes, I have professional experience:</b> four company environments across Vietnam and an international Barcelona-based team, with responsibilities ranging from internship delivery to product ownership and current middle-level mobile development.</p>
-        </div>
-      </section>
-
-      <section className="story-section">
-        <div className="wrap article-layout">
-          <div className="section-title reveal" data-reveal>
-            <span>02 · Why I stand out</span>
-            <h2>Practical engineering first. Research depth next.</h2>
+        <section id="profile" className="section reveal" data-reveal>
+          <div className="section-label">Profile summary</div>
+          <h2>At a glance</h2>
+          <div className="facts">
+            {highlights.map(([label, value]) => <div className="fact" key={label}>
+              <span>{label}</span>
+              <strong>{value}</strong>
+            </div>)}
           </div>
-          <div className="strength-list">
-            {strengths.map(([title, text], index) => <article className="strength-row reveal" data-reveal key={title}>
-              <span>0{index + 1}</span>
+          <p className="note"><strong>Recent academic trend:</strong> the most recent four semesters produce a credit-weighted reference average of approximately 3.20/4.00 across 67 credits, compared with the official cumulative GPA of 2.78/4.00.</p>
+        </section>
+
+        <section className="section reveal" data-reveal>
+          <div className="section-label">Profile strengths</div>
+          <h2>What defines my profile</h2>
+          <div className="text-list">
+            {strengths.map(([title, text]) => <div className="text-row" key={title}>
               <h3>{title}</h3>
               <p>{text}</p>
-            </article>)}
+            </div>)}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="experience" className="wrap article-section">
-        <div className="section-title reveal" data-reveal>
-          <span>03 · Professional experience</span>
-          <h2>Four companies. Increasing ownership.</h2>
-          <p>My work history is best read as progression: from learning inside a delivery team to owning production outcomes.</p>
-        </div>
-        <div className="experience-list">
-          {experience.map(([company, role, period, text]) => <article className="experience-row reveal" data-reveal key={company}>
-            <div className="experience-time">{period}</div>
-            <div>
-              <p className="company-name">{company}</p>
-              <h3>{role}</h3>
+        <section id="experience" className="section reveal" data-reveal>
+          <div className="section-label">Professional experience</div>
+          <h2>Four companies, with increasing technical ownership</h2>
+          <p className="section-intro">My work history progressed from internship delivery to production ownership and middle-level mobile development.</p>
+          <div className="experience-list">
+            {experience.map(([company, role, period, text]) => <div className="experience-item" key={company}>
+              <div className="experience-head">
+                <div><span className="company">{company}</span><h3>{role}</h3></div>
+                <span className="period">{period}</span>
+              </div>
               <p>{text}</p>
-            </div>
-          </article>)}
-        </div>
-      </section>
+            </div>)}
+          </div>
+        </section>
 
-      <section id="research" className="research-section">
-        <div className="wrap article-layout">
-          <div className="section-title light reveal" data-reveal>
-            <span>04 · Bachelor thesis</span>
-            <h2>Agentic RAG for dynamic product suggestion.</h2>
-            <p>Clothie is a production-oriented fashion recommendation system designed to resolve vague user intent while controlling retrieval quality, latency, and LLM cost.</p>
+        <section id="research" className="section reveal" data-reveal>
+          <div className="section-label">Bachelor thesis · 2026</div>
+          <h2>Agentic RAG for dynamic product suggestion</h2>
+          <p className="section-intro">Clothie is a production-oriented fashion recommendation system designed to resolve vague user intent while controlling retrieval quality, latency, and LLM cost.</p>
+
+          <div className="metrics">
+            <div><strong>5,096</strong><span>products</span></div>
+            <div><strong>209</strong><span>evaluated turns</span></div>
+            <div><strong>1–2</strong><span>LLM calls per turn</span></div>
+            <div><strong>$0.000142</strong><span>average cost per turn</span></div>
           </div>
 
-          <div className="thesis-stats reveal" data-reveal>
-            {thesisStats.map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
+          <div className="research-copy">
+            <p><strong>Architecture:</strong> single-LLM intent-first orchestration, six-slot extraction, clarification gating, multi-turn memory, and deterministic routing.</p>
+            <p><strong>Retrieval:</strong> BM25, FashionSigLIP, Reciprocal Rank Fusion, RapidFuzz, BGE reranking, and Qdrant.</p>
+            <p><strong>Stack:</strong> Python, FastAPI, PostgreSQL, Qdrant, Flutter, Docker, and Gemini 2.5 Flash.</p>
           </div>
+          <a className="inline-link" href="https://github.com/minhtri2k3/llm-thesis" target="_blank" rel="noreferrer">View research repository</a>
+        </section>
 
-          <article className="research-summary reveal" data-reveal>
+        <section id="education" className="section reveal" data-reveal>
+          <div className="section-label">Education and direction</div>
+          <h2>Academic background</h2>
+          <div className="education-grid">
             <div>
-              <span className="tiny-label">Core architecture</span>
-              <h3>Single-LLM intent-first orchestration + Hybrid RAG</h3>
+              <h3>International University — VNU-HCM</h3>
+              <p>Information Technology · Computer Network<br />2021–2026 · Graduation: November 2026</p>
             </div>
-            <p>Intent classification, six-slot extraction, clarification gating, multi-turn memory, BM25, FashionSigLIP, RRF, RapidFuzz, BGE reranking, Qdrant, PostgreSQL, FastAPI, Flutter, and Docker.</p>
-          </article>
-
-          <div className="research-links reveal" data-reveal>
-            <a href="https://github.com/minhtri2k3/llm-thesis" target="_blank" rel="noreferrer">View research repository <Arrow /></a>
+            <div>
+              <h3>Academic indicators</h3>
+              <p>Cumulative GPA: <strong>2.78/4.00</strong><br />Recent two-year reference GPA: <strong>≈3.20/4.00</strong><br />Final semester GPA: <strong>3.36/4.00</strong><br />Bachelor thesis: <strong>84/100</strong></p>
+            </div>
+            <div>
+              <h3>English</h3>
+              <p>IELTS<br />Listening 7.5 · Reading 6.5<br />Writing 6.5 · Speaking 6.0</p>
+            </div>
+            <div>
+              <h3>Master's direction</h3>
+              <p><strong>Primary:</strong> AI · Computer Science<br /><strong>Additional:</strong> Software Engineering · Cybersecurity<br />Target intake: 2027</p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="education" className="wrap article-section education-section">
-        <div className="section-title reveal" data-reveal>
-          <span>05 · Education & next step</span>
-          <h2>Academic record with a clear upward trend.</h2>
-        </div>
-        <div className="education-copy reveal" data-reveal>
-          <p><b>International University — Vietnam National University HCMC</b><br />Information Technology · Computer Network · 2021–2026</p>
-          <p>The official cumulative GPA is <b>2.78/4.00 (69.3/100)</b>. Across the most recent four semesters, the credit-weighted reference average rises to <b>≈3.20/4.00 (≈77.31/100)</b>, with the latest semester at <b>3.36/4.00</b>.</p>
-          <p>IELTS bands: <b>Listening 7.5 · Reading 6.5 · Writing 6.5 · Speaking 6.0</b>. Bachelor thesis grade: <b>84/100</b>.</p>
-        </div>
-
-        <div className="next-step reveal" data-reveal>
-          <span className="tiny-label">What I want from a mentor</span>
-          <p>Programme fit, scholarship strategy, and positioning for a 2027 Master’s application—especially where strong professional experience, recent academic improvement, and AI research can strengthen the overall profile.</p>
-        </div>
-      </section>
+        <section className="closing reveal" data-reveal>
+          <div className="section-label">Mentor context</div>
+          <h2>What I am looking for</h2>
+          <p>I am looking for guidance on programme fit, scholarship strategy, and how to position professional experience, recent academic improvement, and AI research effectively for postgraduate applications in 2027.</p>
+        </section>
+      </article>
     </main>
 
-    <footer className="wrap footer">
+    <footer className="footer">
       <span>Nguyễn Quang Minh Trí</span>
-      <span>Vietnam · Updated 2026</span>
+      <span>Master Portfolio · 2027</span>
     </footer>
   </>;
 }
