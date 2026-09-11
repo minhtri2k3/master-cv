@@ -67,8 +67,7 @@ function App() {
         </section>
 
         <section id="profile" className="section reveal" data-reveal>
-          <div className="section-label">Profile summary</div>
-          <h2>At a glance</h2>
+          <h2>Profile Summary</h2>
           <div className="facts">
             {highlights.map(([label, value]) => <div className="fact" key={label}>
               <span>{label}</span>
